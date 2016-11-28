@@ -5,3 +5,20 @@ body
 	color: magenta;
 	background:black;
 }
+
+a:link
+{
+	color:red;
+}
+a:visited
+{
+	color:purple;
+}
+a:active
+{
+	color:hotpink;
+}
+a:hover
+{
+	color:hotpink;
+}
