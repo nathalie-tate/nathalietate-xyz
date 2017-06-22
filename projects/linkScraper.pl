@@ -62,6 +62,10 @@ for $_(@html)
     {
       print "$match\n";
     }
+    elsif( $match =~ /^\/\/(.+)/)
+    {
+      print "$1\n";
+    }
     elsif( !($url =~ /.*\/$/) && !($match =~ /^\/.*/))
     {
       print "$url/$match\n";
