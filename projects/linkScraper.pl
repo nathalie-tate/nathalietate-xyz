@@ -47,9 +47,9 @@ $urlBase = $1;
 
 my @links;
 
-system("wget $url -qO .tmp");
+system("wget $url -qO /tmp/.scrapertmp");
 
-open TMP,"<",".tmp" or die;
+open TMP,"<","/tmp/.scrapertmp" or die;
 my @html = <TMP>;
 close TMP;
 
@@ -81,4 +81,4 @@ for $_(@html)
   }
 }
 
-system("rm .tmp");
+system("rm /tmp/.scrapertmp");
