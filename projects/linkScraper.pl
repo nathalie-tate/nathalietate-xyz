@@ -42,7 +42,7 @@ $url = trim($url);
 
 my $urlBase;
 
-$url =~ /^((https?:\/\/)?(www\.)?([^.\s]+)(\.)([^\/]*))\/?.*$/;
+$url =~ /^((https?:\/\/)?(www\.)?([^\.\s]+)(\.)([^\/]*))\/?.*$/;
 $urlBase = $1;
 
 my @links;
