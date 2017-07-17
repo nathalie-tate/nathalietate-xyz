@@ -12,7 +12,8 @@
 
 # Note that this is NOT recursive. If "foo.com" contains one link to "bar.com"
 # and "bar.com" contains one link to "foobar.com", Then "./linkScraper.pl
-# foo.com" will print "bar.com"
+# foo.com" will print "bar.com" Scripting it to be recursive should be a trivial
+# task and is left as an exercise for the reader.
 
 # Also note that this only looks for HTML hyperlinks. JavaScript buttons or 
 # URLs written in plain text will not be detected
@@ -61,6 +62,10 @@ for $_(@html)
     if($match =~ /^https?:\/\//)
     {
       print "$match\n";
+    }
+    elsif($match =~ /(mailto\:.+)/)
+    {
+      print "$1\n";
     }
     elsif( $match =~ /^\/\/(.+)/)
     {
