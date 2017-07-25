@@ -1,1 +1,4 @@
 projects/acechat/client
+*.hi
+*.o
+a.out
