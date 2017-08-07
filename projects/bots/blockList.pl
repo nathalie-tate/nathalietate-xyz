@@ -20,9 +20,5 @@ close FILE;
 for(@users)
 {
 	$_ = trim($_);
-}
-
-for (@users)
-{
 	system("t block $_");
 }
