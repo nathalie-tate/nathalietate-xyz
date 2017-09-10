@@ -46,7 +46,7 @@ sub matchesAuthor
   {
     $author = trim $author;
     $_ = trim $_;
-    if (($author) eq ($_))
+    if (($author) =~ /$_/)
     {
       return 1;
     }
@@ -68,8 +68,7 @@ for (0..@html-1)
   $liCounter = 1;
   if ($html[$_] =~ /^\s*\<li class="work blurb group"/)
   {
-    $html[$_ + 11] =~ /\<.*\>(\S+)\<.*\>/;
-    if (matchesAuthor($1))
+    if (matchesAuthor($html[$_ + 11]))
     {
       $html[$_] = "";
       my $line = $_ + 1;
