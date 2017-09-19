@@ -21,6 +21,8 @@
 use strict;
 use warnings;
 
+use LWP::Simple;
+
 sub trim
 {
   my $s = shift;
@@ -46,13 +48,7 @@ my $urlBase;
 $url =~ /^((https?:\/\/)?(www\.)?([^\.\s]+)(\.)([^\/]*))\/?.*$/;
 $urlBase = $1;
 
-my @links;
-
-system("wget $url -qO /tmp/.scrapertmp");
-
-open TMP,"<","/tmp/.scrapertmp" or die;
-my @html = <TMP>;
-close TMP;
+my @html = split /\n/, get($url) or die "Invalid URL";
 
 for $_(@html)
 {
@@ -85,5 +81,3 @@ for $_(@html)
     }
   }
 }
-
-system("rm /tmp/.scrapertmp");
