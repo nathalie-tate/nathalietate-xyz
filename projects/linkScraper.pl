@@ -85,7 +85,8 @@ foreach my $url_(@url)
       }
       elsif( $match =~ /^\/\/(.+)/)
       {
-        print "$1\n";
+        #TODO
+        print "http:\/\/$1\n";
       }
       elsif( !($url_ =~ /.*\/$/) && !($match =~ /^\/.*/))
       {
