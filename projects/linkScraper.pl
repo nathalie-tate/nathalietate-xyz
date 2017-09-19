@@ -7,8 +7,8 @@
 # This code may be freely modified or distrubuted under the terms of the MIT
 # License
 
-# Prints all of the links on a webpage. Takes URL as commandline arg or 
-# interactively.
+# Prints all of the links on a webpage. Takes URLs as commandline args or 
+# from STDIN.
 
 # Note that this is NOT recursive. If "foo.com" contains one link to "bar.com"
 # and "bar.com" contains one link to "foobar.com", Then "./linkScraper.pl
@@ -24,7 +24,7 @@ use warnings;
 use LWP::Simple;
 
 use Getopt::Std;
-our($opt_h, $opt_f);
+our($opt_h, $opt_q);
 
 sub trim
 {
@@ -33,34 +33,28 @@ sub trim
   return $s
 }
 
-@ARGV && getopts('hf:');
+@ARGV && getopts('hq');
 
 $opt_h && die 
- "Prints all of the links on a webpage. Takes URL as commandline arg or interactively
+ "Prints all of the links on a webpage. Takes URLs as commandline args or from STDIN. Accepts input from redirects or pipes.
  USAGE:
-    linkScraper [URL] [options]        use specified URL
+    linkScraper [URLs] [options]       use specified URLs
 
  OPTIONS:
     -h                                 display this dialog
-    -f <FILE>                          read a list of URLs from the specified file\n";
-
+    -q                                 no prompt when reading from STDIN. Use when scripting or redirecting output.\n";
 
 
 my @url;
 
-if (!$opt_f)
-{
-  if($url[0] = $ARGV[0]){}
-  else
-  {
-    $url[0] = <STDIN>;
-  }
-}
+if(@url = @ARGV){}
 else
 {
-  open FILE, "<", $opt_f or die "Invalid file\n";
-  @url = <FILE>;
-  close FILE;
+  if(!$opt_q)
+  {
+    print "Enter a list of URLs, separated by newlines. Press Ctrl-d when done.\n";
+  }
+  @url = <STDIN>;
 }
 
 foreach my $url_(@url)
