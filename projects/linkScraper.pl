@@ -32,13 +32,10 @@ sub trim
 
 my $url;
 
-if($ARGV[0])
-{ 
-  $url = $ARGV[0];
-}
+if($url = $ARGV[0]){}
 else
 {
-  $url = <>;
+  $url = <STDIN>;
 }
 
 $url = trim($url) or die "URL must not be empty\n";
