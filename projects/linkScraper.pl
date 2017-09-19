@@ -46,53 +46,65 @@ $opt_h && die
 
 
 
-my $url;
+my @url;
 
-if($url = $ARGV[0]){}
+if (!$opt_f)
+{
+  if($url[0] = $ARGV[0]){}
+  else
+  {
+    $url[0] = <STDIN>;
+  }
+}
 else
 {
-  $url = <STDIN>;
+  open FILE, "<", $opt_f or die "Invalid file\n";
+  @url = <FILE>;
+  close FILE;
 }
 
-$url = trim($url) or die "URL must not be empty\n";
-
-my $urlBase;
-
-$url =~ /^((https?:\/\/)?(www\.)?([^\.\s]+)(\.)([^\/]*))\/?.*$/;
-$urlBase = $1;
-
-my $html = get($url) or die "Invalid URL\n(Make sure to include the protocol)\n";
-
-my @html = split /\n/, $html;
-
-for $_(@html)
+foreach my $url_(@url)
 {
-  if($_ =~ /href\s*=\s*[\'\"](\S+)[\'\"]/)
+  $url_ = trim($url_) or die "URL must not be empty\n";
+
+  my $urlBase;
+
+  $url_ =~ /^((https?:\/\/)?(www\.)?([^\.\s]+)(\.)([^\/]*))\/?.*$/;
+  $urlBase = $1;
+
+  my $html = get($url_) or die "Invalid URL\n(Make sure to include the protocol)\n";
+
+  my @html = split /\n/, $html;
+
+  for $_(@html)
   {
-    my $match = $1;
-    if($match =~ /^https?:\/\//)
+    if($_ =~ /href\s*=\s*[\'\"](\S+)[\'\"]/)
     {
-      print "$match\n";
-    }
-    elsif($match =~ /(mailto\:.+)/)
-    {
-      print "$1\n";
-    }
-    elsif( $match =~ /^\/\/(.+)/)
-    {
-      print "$1\n";
-    }
-    elsif( !($url =~ /.*\/$/) && !($match =~ /^\/.*/))
-    {
-      print "$url/$match\n";
-    }
-    elsif(($url =~ /(.*\/$)/) && ($match =~ /^\/.*/))
-    {
-      print "$1/$match\n"; 
-    }
-    else
-    {
-      print "$urlBase$match\n";
+      my $match = $1;
+      if($match =~ /^https?:\/\//)
+      {
+        print "$match\n";
+      }
+      elsif($match =~ /(mailto\:.+)/)
+      {
+        print "$1\n";
+      }
+      elsif( $match =~ /^\/\/(.+)/)
+      {
+        print "$1\n";
+      }
+      elsif( !($url_ =~ /.*\/$/) && !($match =~ /^\/.*/))
+      {
+        print "$url_/$match\n";
+      }
+      elsif(($url_ =~ /(.*\/$)/) && ($match =~ /^\/.*/))
+      {
+        print "$1/$match\n"; 
+      }
+      else
+      {
+        print "$urlBase$match\n";
+      }
     }
   }
 }
