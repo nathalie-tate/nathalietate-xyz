@@ -41,7 +41,7 @@ else
   $url = <>;
 }
 
-$url = trim($url);
+$url = trim($url) or die "URL must not be empty\n";
 
 my $urlBase;
 
