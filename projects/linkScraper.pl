@@ -48,7 +48,9 @@ my $urlBase;
 $url =~ /^((https?:\/\/)?(www\.)?([^\.\s]+)(\.)([^\/]*))\/?.*$/;
 $urlBase = $1;
 
-my @html = split /\n/, get($url) or die "Invalid URL";
+my $html = get($url) or die "Invalid URL\n(Make sure to include the protocol)\n";
+
+my @html = split /\n/, $html;
 
 for $_(@html)
 {
