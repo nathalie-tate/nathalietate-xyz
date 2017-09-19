@@ -23,12 +23,28 @@ use warnings;
 
 use LWP::Simple;
 
+use Getopt::Std;
+our($opt_h, $opt_f);
+
 sub trim
 {
   my $s = shift;
   $s =~ s/^\s+|\s+$//g;
   return $s
 }
+
+@ARGV && getopts('hf:');
+
+$opt_h && die 
+ "Prints all of the links on a webpage. Takes URL as commandline arg or interactively
+ USAGE:
+    linkScraper [URL] [options]        use specified URL
+
+ OPTIONS:
+    -h                                 display this dialog
+    -f <FILE>                          read a list of URLs from the specified file\n";
+
+
 
 my $url;
 
