@@ -15,6 +15,9 @@
 
 # Default location of the blocklist is '~/.config/ao3Filter/blockList'
 
+# Defalt location for Qutebrowser userscripts is
+# ~/.local/share/qutebrowser/userscripts
+
 use strict;
 use warnings;
 
@@ -89,7 +92,6 @@ for (0..@html-1)
         {
           $liCounter--;
         }
-        #print $html[$line]."\n";
         $html[$line] = "";
         $line++;
       }
