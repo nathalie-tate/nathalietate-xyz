@@ -22,9 +22,10 @@ use strict;
 use warnings;
 
 use LWP::Simple;
-
 use Getopt::Std;
+
 our($opt_h, $opt_q);
+my @url;
 
 sub trim
 {
@@ -43,9 +44,6 @@ $opt_h && die
  OPTIONS:
     -h                                 display this dialog
     -q                                 no prompt when reading from STDIN. Use when scripting or redirecting output.\n";
-
-
-my @url;
 
 if(@url = @ARGV){}
 else
@@ -85,7 +83,8 @@ foreach my $url_(@url)
       }
       elsif( $match =~ /^\/\/(.+)/)
       {
-        #TODO
+        #TODO -- currently assumes http. Not sure if it is possible to get the
+        #"correct" protocol
         print "http:\/\/$1\n";
       }
       elsif( !($url_ =~ /.*\/$/) && !($match =~ /^\/.*/))
