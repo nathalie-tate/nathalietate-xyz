@@ -68,6 +68,7 @@ for (0..@html-1)
   $liCounter = 1;
   if ($html[$_] =~ /^\s*\<li class="work blurb group"/)
   {
+    # author is 11 lines under above match
     if (matchesAuthor($html[$_ + 11]))
     {
       $html[$_] = "";
@@ -88,7 +89,7 @@ for (0..@html-1)
         {
           $liCounter--;
         }
-        print $html[$line]."\n";
+        #print $html[$line]."\n";
         $html[$line] = "";
         $line++;
       }
