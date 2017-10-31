@@ -4,11 +4,11 @@ body
   font-size: 18px;
   color: magenta;
   background:black;
+  text-align: center;
 }
 
 .header
 {
-  text-align: center;
 }
 .links
 { 
