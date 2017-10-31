@@ -6,6 +6,11 @@ body
 	background:black;
 }
 
+#header
+{
+  float:center;
+}
+
 a:link
 {
 	color:red;
