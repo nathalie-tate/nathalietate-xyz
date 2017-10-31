@@ -16,6 +16,8 @@ body
   font-size: 12px;
   position:absolute;
   bottom:0%;
+  left:50%;
+  right:50%;
 }
 
 a:link
