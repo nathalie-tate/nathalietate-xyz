@@ -14,7 +14,8 @@ body
 .disclaimer
 {
   font-size: 12px;
-  padding-top: 35%;
+  position:relative;
+  bottom:40px;
 }
 
 a:link
