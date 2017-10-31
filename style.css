@@ -5,14 +5,15 @@ body
   color: magenta;
   background:black;
   text-align: center;
+  width:auto;
 }
 
-.header
+.footer
 {
 }
-.links
-{ 
-  text-align: center;
+.disclaimer
+{
+
 }
 
 a:link
