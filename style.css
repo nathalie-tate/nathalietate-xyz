@@ -1,12 +1,12 @@
 body
 {
-	font-family:"Prestige Elite",monospace;
-	font-size: 18px;
-	color: magenta;
-	background:black;
+  font-family:"Prestige Elite",monospace;
+  font-size: 18px;
+  color: magenta;
+  background:black;
 }
 
-#header
+.header
 {
   color:white;
   margin:auto;
@@ -15,17 +15,17 @@ body
 
 a:link
 {
-	color:red;
+  color:red;
 }
 a:visited
 {
-	color:purple;
+  color:purple;
 }
 a:active
 {
-	color:hotpink;
+  color:hotpink;
 }
 a:hover
 {
-	color:hotpink;
+  color:hotpink;
 }
