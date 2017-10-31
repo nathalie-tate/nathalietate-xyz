@@ -4,12 +4,12 @@ body
 	font-size: 18px;
 	color: magenta;
 	background:black;
-    text-align:center;
 }
 
 .header
 {
   margin:auto;
+  text-align:center;
 }
 
 a:link
