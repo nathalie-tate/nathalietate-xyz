@@ -13,7 +13,8 @@ body
 }
 .disclaimer
 {
-
+  font-size: 12px;
+  padding: 70px 0;
 }
 
 a:link
