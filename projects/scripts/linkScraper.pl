@@ -36,14 +36,15 @@ sub trim
 
 @ARGV && getopts('hq');
 
-$opt_h && die 
- "Prints all of the links on a webpage. Takes URLs as commandline args or from STDIN. Accepts input from redirects or pipes.
+$opt_h && die << "END";
+Prints all of the links on a webpage. Takes URLs as commandline args or from STDIN. Accepts input from redirects or pipes.
  USAGE:
     linkScraper [URLs] [options]       use specified URLs
 
  OPTIONS:
     -h                                 display this dialog
-    -q                                 no prompt when reading from STDIN. Use when scripting or redirecting output.\n";
+    -q                                 no prompt when reading from STDIN. Use when scripting or redirecting output.
+END
 
 if(@url = @ARGV){}
 else
@@ -64,7 +65,8 @@ foreach my $url_(@url)
   $url_ =~ /^((https?:\/\/)?(www\.)?([^\.\s]+)(\.)([^\/]*))\/?.*$/;
   $urlBase = $1;
 
-  my $html = get($url_) or die "Invalid URL\n(Make sure to include the protocol)\n";
+  my $html = get($url_) or 
+    die "Invalid URL\n(Make sure to include the protocol)\n";
 
   my @html = split /\n/, $html;
 

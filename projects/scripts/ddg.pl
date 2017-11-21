@@ -4,9 +4,9 @@ use warnings;
 
 my $cmd = "elinks https://duckduckgo.com/html?q=";
 
-for my $i (0..$#ARGV)
+foreach @ARGV
 {
-  $cmd = $cmd.$ARGV[$i].'+';
+  $cmd .= "$_+";
 }
 
 $cmd = substr $cmd, 0, -1;
