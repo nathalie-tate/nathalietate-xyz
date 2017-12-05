@@ -6,7 +6,7 @@ my @links = <"dropbox/*">;
 
 for (@links)
 {
-  $_ = "<a href='$_'>$_</a><br/>";
+  $_ = "<a href='$_' download>$_</a><br/>";
 }
 
 HTMLdisp(@links); 
