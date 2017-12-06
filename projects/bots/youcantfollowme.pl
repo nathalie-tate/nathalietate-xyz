@@ -6,11 +6,7 @@ while(1)
 	if($sec == 0 && $min % 6 ==0)
 	{
 		print "$min\n";
-		system("t followers > followers.txt");
-		open  FOLLOWERS, "<", "followers.txt" or die;
-
-		@followers = <FOLLOWERS>;
-
+		@followers = qx(t followers);
 
 		for $follower(@followers)
 		{
