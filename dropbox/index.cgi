@@ -13,8 +13,7 @@ for (@links)
 
 $html .= qq{
   <div class="disclaimer">
-    <input type="password">\n<
-    input type = "submit" value="Delete"> 
+    <input type="password"> <input type="submit" value="Delete"> 
   </div>
 </form>};
 
