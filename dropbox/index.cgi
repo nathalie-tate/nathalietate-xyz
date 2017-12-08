@@ -8,7 +8,7 @@ my $html = qq{<form action="" method="POST">};
 
 for (@links)
 {
-  $html .= qq{<input type="checkbox"> <a href='$_' download>$_</a><br/>};
+  $html .= qq{<input type="checkbox" /> <a href='$_' download>$_</a><br/>};
 }
 
 $html .= qq{<input type="password">\n<input type = "submit"> </form>};
@@ -19,6 +19,7 @@ HTMLdisp(@links);
 sub HTMLdisp                                                                     
 {                                                                                
   print "Content-type:text/html\n\n";                                            
+  print "<!DOCTYPE html>";
   print "<html>";                                                                
   print "<head>";                                                                
   print "<title>Dropbox</title>";                                                 
