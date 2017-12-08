@@ -11,7 +11,7 @@ for (@links)
   $html .= qq{<input type="checkbox" > <a href='$_' download>$_</a><br/>};
 }
 
-$html .= qq{<input type="password">\n<input type = "submit"> </form>};
+$html .= qq{<input class="disclaimer" type="password">\n<input type = "submit" value="Delete"> </form>};
 
 HTMLdisp($html); 
 
