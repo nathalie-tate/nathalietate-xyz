@@ -4,10 +4,14 @@ use warnings;
 
 my @links = <"dropbox/*">;
 
+my $html = qq{<form action="" method="POST">};
+
 for (@links)
 {
-  $_ = "<a href='$_' download>$_</a><br/>";
+  $html .= qq{<input type="checkbox"> <a href='$_' download>$_</a><br/>};
 }
+
+$html .= qq{<input type="password">\n<input type = "submit"> </form>};
 
 HTMLdisp(@links); 
 
