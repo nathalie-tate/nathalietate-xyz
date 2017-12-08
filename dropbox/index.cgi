@@ -4,16 +4,16 @@ use warnings;
 
 my @links = <"dropbox/*">;
 
-my $html = qq{<form action="" method="POST">};
+my $html = qq{<form action="process.cgi" method="POST">};
 
 for (@links)
 {
-  $html .= qq{<input type="checkbox" /> <a href='$_' download>$_</a><br/>};
+  $html .= qq{<input type="checkbox" > <a href='$_' download>$_</a><br/>};
 }
 
 $html .= qq{<input type="password">\n<input type = "submit"> </form>};
 
-HTMLdisp(@links); 
+HTMLdisp($html); 
 
 ###############################################################################
 sub HTMLdisp                                                                     
