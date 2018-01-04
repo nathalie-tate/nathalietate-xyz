@@ -8,12 +8,12 @@ my $html = qq{<form action="process.cgi" method="POST">};
 
 for (@links)
 {
-  $html .= qq{<input type="checkbox" > <a href='$_' download>$_</a><br/>};
+  $html .= qq{<input type="checkbox" name="$_"><a href='$_' download>$_</a><br/>};
 }
 
 $html .= qq{
   <div class="disclaimer">
-    <input type="password"> <input type="submit" value="Delete"> 
+    <input name="password" type="password" required> <input type="submit" value="Delete"> 
   </div>
 </form>};
 
