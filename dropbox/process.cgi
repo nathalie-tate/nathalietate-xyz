@@ -33,4 +33,4 @@ else
 
   print redirect('https://nathalietate.xyz/dropbox');
 }
-print $q->redirect('https://nathalietate.xyz/dropbox');
+print redirect('https://nathalietate.xyz/dropbox');
