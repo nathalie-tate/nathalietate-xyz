@@ -6,6 +6,8 @@ use Digest::SHA qw(sha256_hex);
 #use CGI::Carp qw{fatalsToBrowser};
 
 my $q = new CGI;
+print CGI::header();
+print $q->redirect('https://nathalietate.xyz/dropbox');
 
 my $phash = q{cced8a7c9d48801908c360b2948c66a690c34b061eaa6815a1b29d673f8b97cf};
 my @links = <"dropbox/*">;
