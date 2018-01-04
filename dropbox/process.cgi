@@ -3,7 +3,9 @@ use strict;
 use warnings;
 use CGI qw{param redirect};
 use Digest::SHA qw(sha256_hex);
-use CGI::Carp qw{fatalsToBrowser};
+#use CGI::Carp qw{fatalsToBrowser};
+
+my $q = new CGI;
 
 my $phash = q{cced8a7c9d48801908c360b2948c66a690c34b061eaa6815a1b29d673f8b97cf};
 my @links = <"dropbox/*">;
@@ -19,7 +21,7 @@ my $testHash = sha256_hex($pword.'XXX');
 
 if ($testHash ne $phash)
 {
-  print redirect('https://nathalietate.xyz/dropbox');
+  #print $q->redirect('https://nathalietate.xyz/dropbox');
 }
 else
 {
@@ -31,6 +33,6 @@ else
     }
   }
 
-  print redirect('https://nathalietate.xyz/dropbox');
+  #print $q->redirect('https://nathalietate.xyz/dropbox');
 }
-print redirect('https://nathalietate.xyz/dropbox');
+print $q->redirect('https://nathalietate.xyz/dropbox');
