@@ -8,7 +8,7 @@ use Digest::SHA qw(sha256_hex);
 my $phash = q{cced8a7c9d48801908c360b2948c66a690c34b061eaa6815a1b29d673f8b97cf};
 my @links = <"dropbox/*">;
 
-my $pword = param('password');
+my $pword = url_param('password');
 my %paramHash;
 foreach $_ (@links)
 {
