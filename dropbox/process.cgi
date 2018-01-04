@@ -27,7 +27,7 @@ else
 {
   foreach $_ (keys %paramHash)
   {
-    if ($paramHash{$_} == 1)
+    if ($paramHash{$_} eq 'on')
     {
       $_ = uri_unescape($_);
       qx{rm $_};
