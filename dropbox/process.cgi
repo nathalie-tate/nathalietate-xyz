@@ -35,4 +35,5 @@ else
 
   #print $q->redirect('https://nathalietate.xyz/dropbox');
 }
+print CGI::header();
 print $q->redirect('https://nathalietate.xyz/dropbox');
