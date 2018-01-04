@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
-use CGI qw{param redirect};
+use CGI qw{url_param redirect};
 use Digest::SHA qw(sha256_hex);
 #use CGI::Carp qw{fatalsToBrowser};
 
@@ -12,7 +12,7 @@ my $pword = param('password');
 my %paramHash;
 foreach $_ (@links)
 {
-  $paramHash{$_} = param($_);
+  $paramHash{$_} = url_param($_);
 }
 
 my $testHash = sha256_hex($pword.'XXX'); 

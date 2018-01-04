@@ -4,7 +4,7 @@ use warnings;
 
 my @links = <"dropbox/*">;
 
-my $html = qq{<form action="process.cgi" method="POST">};
+my $html = qq{<form action="process.cgi" method="GET">};
 
 for (@links)
 {
