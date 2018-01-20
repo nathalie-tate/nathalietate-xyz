@@ -4,7 +4,7 @@ use warnings;
 
 my $cmd = "elinks https://duckduckgo.com/html?q=";
 
-foreach @ARGV
+foreach (@ARGV)
 {
   $cmd .= "$_+";
 }
