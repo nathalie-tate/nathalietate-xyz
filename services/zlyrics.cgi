@@ -71,8 +71,8 @@ sub printBody
 
   print qq[
   <body>
-    $artist
     $song
+    $artist
     $str
     $code
   </body>
