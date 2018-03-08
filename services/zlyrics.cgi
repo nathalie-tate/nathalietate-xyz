@@ -94,7 +94,7 @@ sub fetch{
   }
   else
   {
-    die "Lyrics not found.\n";
+    return "Lyrics not found";
   }
 
   my $output = join "\n", @newHtml;
