@@ -6,24 +6,49 @@ use strict;
 use CGI qw/param header/;
 use LWP::Simple;
 
-print header();
+printHeader();
 
 if(param("lyrics"))
 {
-  fetch(param("lyrics"));
+  printBody(fetch(param("lyrics")));
 }
 
 else
 {
-  printForm();
+  printBody(form());
 }
 
 
 ###############################################################################
 
-sub printForm
+sub printHeader
 {
+  print header().qq[ 
+    <!DOCTYPE html>
+    <html lang="en-US">
+      <head>
+        <meta charset="utf-8">
+        <title>⚧ Home ⚢</title>
+        <LINK href="/style.css" rel="stylesheet" type="text/css">
+      </head>
+  ];
+}
+
+sub printBody
+{
+  my $str = shift;
+
   print qq[
+  <body>
+    $str
+  </body>
+}
+
+###############################################################################
+
+sub form
+{
+  qq[
     <form method=POST>
       <input name="lyrics" />
       <br>
@@ -34,15 +59,10 @@ sub printForm
 
 ###############################################################################
 sub fetch{
-my @lyrics = @_;
+my $lyrics = shift;
 
-if(@lyrics = @ARGV){}
-else
-{
-  die "zlyrics requires lyrics.\n";
-}
+die "zlyrics requires lyrics.\n" unless $lyrics;
 
-my $lyrics = join "+",@lyrics;
 
 my $html = get("https://search.azlyrics.com/search.php?q=$lyrics");
 my @html;
@@ -76,5 +96,5 @@ $output =~ s/<br>//g;
 $output =~ s/&quot;/"/g;
 $output =~ s/<!-- Usage of azlyrics.com content by any third-party lyrics provider is prohibited by our licensing agreement. Sorry about that. -->//;
 
-print $output;
+$output;
 }
