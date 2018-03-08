@@ -8,9 +8,9 @@ use LWP::Simple;
 
   print header();
 
-if(param(lyrics))
+if(param("lyrics"))
 {
-  fetch(param(lyrics));
+  fetch(param("lyrics"));
 }
 
 else
