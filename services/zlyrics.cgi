@@ -65,7 +65,7 @@ sub printBody
     ? qq[<h2>$song</h2>]
     : "";
 
-  my $code = $code 
+  $code = $code 
     ?  q[<hr /> <a href="https://nathalietate.xyz/services/zlyrics.cgi">Back</a>] 
     : "";
 
