@@ -24,7 +24,7 @@ else
 sub printForm
 {
   print qq[
-    <form>
+    <form method=POST>
       <input name="lyrics" />
       <br>
       <input type="submit" value="Submit" />
