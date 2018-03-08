@@ -1,4 +1,4 @@
-#!/usr/bin/perl -SC
+#!/usr/bin/perl -CS
 
 use warnings;
 use strict;
