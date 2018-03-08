@@ -24,7 +24,7 @@ else
 
 sub printHeader
 {
-  print header().qq[ 
+  print header(-charset=>'utf8').qq[ 
     <!DOCTYPE html>
     <html lang="en-US">
       <head>
