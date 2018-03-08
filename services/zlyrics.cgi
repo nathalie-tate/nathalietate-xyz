@@ -58,11 +58,11 @@ sub printBody
   }
 
   $song = $song 
-    ? qq[<h1>$song</h1>
+    ? qq[<h1>$song</h1>]
     : "";
 
   $artist = $artist
-    ? qq[<h2>$song</h2>
+    ? qq[<h2>$song</h2>]
     : "";
 
   my $code = $code 
