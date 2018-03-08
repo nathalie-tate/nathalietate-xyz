@@ -12,13 +12,13 @@ if(param("lyrics"))
   my ($body, $title)  = fetch(param("lyrics"));
 
   printHeader($title); 
-  printBody($body);
+  printBody($body, 1);
 }
 
 else
 {
   printHeader(); 
-  printBody(form());
+  printBody(form(), 0);
 }
 
 
@@ -42,13 +42,15 @@ sub printHeader
 sub printBody
 {
   my $str = shift;
+  my $code = shift; 
+
+  my $code = $code 
+    ?  q[<hr /> <a href="https://nathalietate.xyz/services/zlyrics.cgi">Back</a>] 
+    : "";
 
   print qq[
   <body>
     $str
-
-    <hr />
-    <a href="https://nathalietate.xyz/services/zlyrics.cgi">Back</a>
   </body>
 ]}
 
