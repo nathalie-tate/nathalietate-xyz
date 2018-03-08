@@ -50,7 +50,7 @@ sub printBody
 
   if ($title)
   {
-    if($title =~ /(.*) Lyrics - (.*)/
+    if($title =~ /(.*) Lyrics - (.*)/)
     {
       $artist = $1;
       $song = $2;
