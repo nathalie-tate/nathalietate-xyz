@@ -2,6 +2,7 @@
 
 use warnings;
 use strict;
+use utf8;
 
 use CGI qw/param header/;
 use LWP::Simple;
