@@ -6,7 +6,7 @@ use strict;
 use CGI qw/param header/;
 use LWP::Simple;
 
-  print header();
+print header();
 
 if(param("lyrics"))
 {
@@ -25,9 +25,9 @@ sub printForm
 {
   print qq[
     <form>
-      <input name="lyrics">
+      <input name="lyrics" />
       <br>
-      <input type="submit" value="Submit />
+      <input type="submit" value="Submit" />
     </form>
   ];
 }
