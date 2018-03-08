@@ -12,7 +12,7 @@ if(param("lyrics"))
   my ($body, $title)  = fetch(param("lyrics"));
 
   printHeader($title); 
-  printBody($body, 1);
+  printBody($body, 1, $title);
 }
 
 else
@@ -43,6 +43,27 @@ sub printBody
 {
   my $str = shift;
   my $code = shift; 
+  my $title = shift;
+
+  my $song;
+  my $artist;
+
+  if ($title)
+  {
+    if($title =~ /(.*) Lyrics - (.*)/
+    {
+      $artist = $1;
+      $song = $2;
+    }
+  }
+
+  $song = $song 
+    ? qq[<h1>$song</h1>
+    : "";
+
+  $artist = $artist
+    ? qq[<h2>$song</h2>
+    : "";
 
   my $code = $code 
     ?  q[<hr /> <a href="https://nathalietate.xyz/services/zlyrics.cgi">Back</a>] 
@@ -50,6 +71,8 @@ sub printBody
 
   print qq[
   <body>
+    $artist
+    $song
     $str
     $code
   </body>
