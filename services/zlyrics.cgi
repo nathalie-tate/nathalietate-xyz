@@ -33,7 +33,7 @@ sub printHeader
     <html lang="en-US">
       <head>
         <meta charset="utf-8">
-        <title>⚧ ]. ($title//"Home") .qq[ ⚢</title>
+        <title>⚧ ]. ($title//"zlyrics") .qq[ ⚢</title>
         <LINK href="/style.css" rel="stylesheet" type="text/css">
       </head>
   ];
