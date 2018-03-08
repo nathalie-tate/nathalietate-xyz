@@ -7,8 +7,6 @@ use utf8;
 use CGI qw/param header/;
 use LWP::Simple;
 
-my $TITLE;
-
 if(param("lyrics"))
 {
   my ($body, $title)  = fetch(param("lyrics"));
@@ -28,6 +26,8 @@ else
 
 sub printHeader
 {
+  my $title = shift;
+
   print header(-charset=>'utf8').qq[ 
     <!DOCTYPE html>
     <html lang="en-US">
@@ -64,31 +64,32 @@ sub form
 
 ###############################################################################
 sub fetch{
-my $lyrics = shift;
+  my $lyrics = shift;
 
-my $title;
+  my $title;
 
-die "zlyrics requires lyrics.\n" unless $lyrics;
+  die "zlyrics requires lyrics.\n" unless $lyrics;
 
 
-my $html = get("https://search.azlyrics.com/search.php?q=$lyrics");
-my @html;
-my @newHtml;
+  my $html = get("https://search.azlyrics.com/search.php?q=$lyrics");
+  my @html;
+  my @newHtml;
 
-if ($html =~/1\. <a href="(.+)" target="_blank">/)
-{
-  $html = get($1);
-  @html = split /\n/, $html;
-
-  for my $i (0..$#html)
+  if ($html =~/1\. <a href="(.+)" target="_blank">/)
   {
-    if ($html[$i] =~ /<!-- Usage of azlyrics.com content by any third-party lyrics provider is prohibited by our licensing agreement. Sorry about that. -->/)
+    $html = get($1);
+    @html = split /\n/, $html;
+
+    for my $i (0..$#html)
     {
-      push @newHtml, $html[$i] and ++$i until($html[$i] =~ /<\/div>/);
-    }
-    elsif ($html[$i] =~ /<title>(.+)<\/title>/)
-    {
-      $title = $1;
+      if ($html[$i] =~ /<!-- Usage of azlyrics.com content by any third-party lyrics provider is prohibited by our licensing agreement. Sorry about that. -->/)
+      {
+        push @newHtml, $html[$i] and ++$i until($html[$i] =~ /<\/div>/);
+      }
+      elsif ($html[$i] =~ /<title>(.+)<\/title>/)
+      {
+        $title = $1;
+      }
     }
   }
   else
@@ -101,4 +102,4 @@ if ($html =~/1\. <a href="(.+)" target="_blank">/)
   $output =~ s/<!-- Usage of azlyrics.com content by any third-party lyrics provider is prohibited by our licensing agreement. Sorry about that. -->//;
 
   ($output, $title);
-}
+} 
