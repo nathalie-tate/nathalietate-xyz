@@ -7,15 +7,19 @@ use utf8;
 use CGI qw/param header/;
 use LWP::Simple;
 
-printHeader();
+my $TITLE;
 
 if(param("lyrics"))
 {
-  printBody(fetch(param("lyrics")));
+  my ($body, $title)  = fetch(param("lyrics"));
+
+  printHeader($title); 
+  printBody($body);
 }
 
 else
 {
+  printHeader(); 
   printBody(form());
 }
 
@@ -29,7 +33,7 @@ sub printHeader
     <html lang="en-US">
       <head>
         <meta charset="utf-8">
-        <title>⚧ Home ⚢</title>
+        <title>⚧ [. $title//"Home" .qq[ ⚢</title>
         <LINK href="/style.css" rel="stylesheet" type="text/css">
       </head>
   ];
@@ -62,6 +66,8 @@ sub form
 sub fetch{
 my $lyrics = shift;
 
+my $title;
+
 die "zlyrics requires lyrics.\n" unless $lyrics;
 
 
@@ -80,16 +86,19 @@ if ($html =~/1\. <a href="(.+)" target="_blank">/)
     {
       push @newHtml, $html[$i] and ++$i until($html[$i] =~ /<\/div>/);
     }
+    elsif ($html[$i] =~ /<title>(.+)<\/title>/)
+    {
+      $title = $1;
+    }
   }
-}
-else
-{
-  die "Lyrics not found.\n";
-}
+  else
+  {
+    die "Lyrics not found.\n";
+  }
 
-my $output = join "\n", @newHtml;
+  my $output = join "\n", @newHtml;
 
-$output =~ s/<!-- Usage of azlyrics.com content by any third-party lyrics provider is prohibited by our licensing agreement. Sorry about that. -->//;
+  $output =~ s/<!-- Usage of azlyrics.com content by any third-party lyrics provider is prohibited by our licensing agreement. Sorry about that. -->//;
 
-$output;
+  ($output, $title);
 }
