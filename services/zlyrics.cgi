@@ -46,6 +46,9 @@ sub printBody
   print qq[
   <body>
     $str
+
+    <hr />
+    <a href="https://nathalietate.xyz/services/zlyrics.cgi">Back</a>
   </body>
 ]}
 
