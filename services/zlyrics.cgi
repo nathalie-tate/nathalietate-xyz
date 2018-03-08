@@ -51,6 +51,7 @@ sub printBody
   print qq[
   <body>
     $str
+    $code
   </body>
 ]}
 
