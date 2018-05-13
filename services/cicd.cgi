@@ -3,8 +3,6 @@
 use strict;
 use warnings;
 
-use CGI::Carp qw/fatalsToBrowser/;
-
 use CGI qw/Vars param/;
 use JSON qw/decode_json/;
 
