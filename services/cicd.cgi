@@ -17,14 +17,6 @@ if($dj eq 'herculeze')
 { 
   print qq[Content-type:text-html\n\n];
 
-  if (system("git -C /var/www/herculeze/ pull"))
-  {
-    print "Success";
-  }
-
-  else
-  {
-    print "Fail"
-  }
-
+  system("git -C /var/www/herculeze/ pull");
+  print "Success";
 }
