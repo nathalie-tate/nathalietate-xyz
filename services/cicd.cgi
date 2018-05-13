@@ -1,18 +1,30 @@
 #!/usr/bin/perl
 
-use CGI qw/param/;
+use strict;
+use warnings;
 
-my @p = param;
+use CGI::Carp qw/fatalsToBrowser/;
 
-open FH,"> /tmp/log.tmp" or die;
+use CGI qw/Vars param/;
+use JSON qw/decode_json/;
 
-print FH $_ for @p;
+my %p = Vars(); 
+my $dj = decode_json($p{POSTDATA});
 
-print <<END
-Content-type:text-html
+$dj = $dj->{repository}->{name};
 
+if($dj eq 'herculeze')
+{ 
+  print qq[Content-type:text-html\n\n];
 
+  if (system("git -C /var/www/herculeze/ pull"))
+  {
+    print "Success";
+  }
 
-Success
+  else
+  {
+    print "Fail"
+  }
 
-END
+}
