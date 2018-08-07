@@ -3,37 +3,71 @@
   <head>
     <meta charset="utf-8">
     <title>⚧ Home ⚢</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd.popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
     <LINK href="/style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <div class='header'>
-      &gt;+++++++++++++[&gt;++++++&gt;+++++&gt;+++ <br>
-      +++&gt;+++++&gt;+++++&gt;+++++&gt;+++++&gt;+++&lt; <br>
-      &lt;&lt;&lt;&lt;&lt;&lt;&lt;-]&gt;.&gt;.&gt;++++++.&gt;+++++++.&lt;&lt; <br>
-      .&gt;&gt;&gt;+++++++++++.&gt;++++++++.&gt;++++. <br>
-      &gt;-------.&lt;&lt;&lt;&lt;&lt;--.&gt;+++++++.&lt;+.&lt;.&gt; <br>
-      &gt;---.---.+++++.&lt;&lt;+++.&gt;&gt;&gt;&gt;&gt;&gt;.&lt;&lt;&lt;&lt; <br>
-      &lt;&lt;&lt;++++++.&gt;---.&lt;.&gt;++++.&gt;&gt;&gt;[+++&lt;] <br>
-    </div>
-    <br/> 
-    <div class='links'>
-      <a href='/projects'>Projects</a>
-      <br>
-      <a href='https://github.com/nathalie-tate'>GitHub</a>
-      <br>
-      <a href='nathalietate.asc'>PGP Public Key</a>
-      <br>
-      <a href='id_rsa.pub'>SSH Public Key</a>
-      <br>
-      <a href="/writing">Writing</a>
-      <br>
-      <a href="/contact">Contact</a>
-      <br>
-      <a href='resume.pdf'>Resume</a>
-      <br>
-      <a href="/license">License</a>
-      <br>
-    </div>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="https://nathalietate.xyz">Nathalie Tate</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle Navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"> 
+              <a href='/projects'>Projects</a>
+            </li>
+            <li class="nav-item"> 
+              <a href="/writing">Writing</a>
+            </li>
+            <li class="nav-item"> 
+              <a href="/contact">Contact</a>
+            </li>
+            <li class="nav-item"> 
+              <a href="/license">License</a>
+            </li>
+            <li class="nav-item dropdown"> 
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+                role="button" data-toggle="dropdown" aria-haspopup="true" 
+                aria-expanded="false">Misc. Documents
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href='resume.pdf'>Resume</a> 
+                <a class="dropdown-item" href='nathalietate.asc'>PGP Public Key</a>
+                <a class="dropdown-item" href='id_rsa.pub'>SSH Public Key</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+                                                     
+      </div>
+    </nav> 
+    <div clas='container'>
+      <div class='row'>
+        <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+          <span>&gt;+++++++++++++[&gt;++++++&gt;+++++&gt;+++ </span>
+          <span>+++&gt;+++++&gt;+++++&gt;+++++&gt;+++++&gt;+++&lt; </span>
+          <span>&lt;&lt;&lt;&lt;&lt;&lt;&lt;-]&gt;.&gt;.&gt;++++++.&gt;+++++++.&lt;&lt; </span>
+          <span>.&gt;&gt;&gt;+++++++++++.&gt;++++++++.&gt;++++. </span>
+          <span>&gt;-------.&lt;&lt;&lt;&lt;&lt;--.&gt;+++++++.&lt;+.&lt;.&gt; </span>
+          <span>&gt;---.---.+++++.&lt;&lt;+++.&gt;&gt;&gt;&gt;&gt;&gt;.&lt;&lt;&lt;&lt; </span>
+          <span>&lt;&lt;&lt;++++++.&gt;---.&lt;.&gt;++++.&gt;&gt;&gt;[+++&lt;] </span>
+        </div>
+      </div>
 
+      <div class='row'>
+          <a href='https://github.com/nathalie-tate'>GitHub</a>
+      </div>
+
+    </div>
   </body>
 </html>
