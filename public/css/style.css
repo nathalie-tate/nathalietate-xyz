@@ -1,0 +1,88 @@
+html
+{
+  height: 100%;
+}
+
+body
+{
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  font-family: Inconsolata, monospace;
+}
+
+nav
+{
+  background: purple;
+  height: auto;
+}
+
+nav a:link{ color: white; }
+nav a:visited { color: white; }
+nav a:active { color: white; }
+nav a:hover { color: magenta; }
+
+.navbar-toggler-icon 
+{
+background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/></svg>"); 
+}
+
+h1
+{
+  color: magenta;
+  text-decoration: underline;
+}
+
+.dropdown-menu
+{
+  background: purple;
+  color: white;
+}
+
+.dropdown-item:hover
+{
+  /*background: magenta;
+  color: black;*/
+  color: magenta;
+  background: purple;
+}
+
+.content
+{
+  font-size: 18px;
+  color: white;
+  background: black;
+  padding:10px;
+  flex: 1 1 auto;
+}
+
+hr
+{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #FFF;
+}
+
+.footer
+{
+  background: purple;
+  color: white;
+  text-align: center;
+/*
+  position: absolute;
+  bottom: 0%;
+*/
+  width: 100%;
+  height: auto;
+}
+.footer a:link{ color: magenta; }
+.footer a:visited { color: magenta; }
+.footer a:active { color: white; }
+.footer a:hover { color: white; }
+
+a { color: magenta; }
+a:link { color: magenta; }
+a:visited { color: magenta; }
+a:active { color: white; }
+a:hover { color: white; }

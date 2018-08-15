@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12"> 
+      <h1>Projects</h1> 
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12"> 
+      <h2>Tarot</h2>
+      <p>
+        A simple script that draws tarot spreads. Supports user-defined decks
+        and spreads. Currently implemented in <a
+        href="https://github.com/nathalie-tate/tarot/tree/master/perl">Perl</a>,
+        but I plan on implementing it in other languages as a learning exercise.
+      </p>
+      <hr />
+    </div>
+  </div> 
+
+  <div class="row">
+    <div class="col-12"> 
+      <h2>Twitter</h2>
+      <h3>Block List</h3>
+      <p>
+        A <a href="/src/blockList.pl">script</a> that takes a list of Twitter
+        usernames and blocks them. Uses <a
+        href="https://github.com/sferik/t">sferik's "t"</a> Twitter client.
+      </p>
+      <h3>You Can't Follow Me</h3>
+      <p>
+        A Twitter <a href="/src/youcantfollowme.pl">bot</a> that soft-blocks
+        all of its followers on a set interval. Uses <a
+        href="https://github.com/sferik/t">sferik's "t"</a> Twitter client.
+      </p>
+      <hr />
+    </div>
+  </div> 
+
+  <div class="row">
+    <div class="col-12"> 
+      <h2>Misc. Scripts</h2>
+      <h3>AO3 Filter</h3>
+      <p>
+        A QuteBrowser <a href="/src/ao3Filter.pl">user script</a> to filter out
+        content from specified authors on Archive of Our Own
+      </p>
+      <h3>ddg.pl</h3>
+      <p>
+        A short <a href="/src/ddg.pl">script</a> to quickly search on Duck Duck
+        Go from the commandline. Uses Elinks.
+      </p>
+      <h3>faq.pl</h3>
+      <p>
+        A short <a href="/src/faq.pl">script</a> that makes it easier to use
+        perldoc.
+      </p>
+      <h3>Link Scraper</h3>
+      <p>
+        A <a href="/src/linkScraper.pl">script</a> that scrapes HTML hyperlinks 
+        from websites.
+      </p>
+      <hr />
+    </div>
+  </div> 
+
+</div>
