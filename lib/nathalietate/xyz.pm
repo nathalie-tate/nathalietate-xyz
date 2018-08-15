@@ -15,4 +15,19 @@ get '/license' => sub
   template 'license' => { 'title' => 'License' };
 };
 
+get '/contact' => sub
+{
+  template 'contact' => { 'title' => 'Contact' };
+};
+
+get '/projects' => sub
+{
+  template 'projects' => { 'title' => 'Projects' };
+};
+
+get '/writing' => sub
+{
+  template 'writing' => { 'title' => 'Writing' }; 
+};
+
 true;

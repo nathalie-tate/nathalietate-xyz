@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Writing</h1> 
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <h2>
+        Innovation in the Software Development Industry: The Effects of Open
+        Source Software
+      </h2>
+      <p>
+        An in-depth examination of the effects of open source software on the
+        software development industry. (<a
+        href="/src/docs/innovationInSotware.pdf">pdf</a>)
+      </p>
+      <hr />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <h2>
+        On the Rape of Persephone: Violence Against Women, Now and in Antiquity
+      </h2>
+      <p>
+        An examination of the Ancient Greek myth as a metaphor for violence
+        against women. (<a href="/docs/ontheRapeofPersephone.pdf">pdf</a>)
+      </p>
+      <hr />
+    </div>
+  </div>
+
+</div>
