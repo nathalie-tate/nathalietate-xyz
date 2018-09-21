@@ -11,12 +11,56 @@
       <p>
         A script that draws tarot spreads. Supports user-defined decks and
         spreads. Currently implemented in <a
-        href="https://github.com/nathalie-tate/tarot/tree/master/perl">Perl</a>,
-        but I plan on implementing it in other languages as a learning exercise.
+        href="https://github.com/nathalie-tate/tarot/tree/master/perl">Perl</a>
+        and <a
+        href="https://github.com/nathalie-tate/tarot/tree/master/ruby">Ruby</a>.
       </p>
       <hr />
     </div>
   </div> 
+
+  <div class="row">
+    <div class="col-12"> 
+      <h2>IBM Selectric II</h2>
+      <h3>Stuck Shift Clutch</h3>
+      <p>
+        I recently purchased a <a
+        href="https://en.wikipedia.org/wiki/IBM_Selectric_typewriter#Selectric_II">
+        non-correcting IBM Selectric II Electric Typewriter</a> from eBay. I
+        took it to a repair shop, but when I got it back, the shift mechanism 
+        was still sticking. A video showcasing this problem is included below.
+      </p>
+      <video controls height="" width="">
+        <source src="/vid/selectric/shiftClutch/stuck.mp4" type="video/mp4">
+      </video>
+      <p>
+        Luckily, this is a fairly easy problem to solve. The gears on the
+        shift clutch are held on by a large retaining ring that can easily be
+        removed with a screwdriver, and reattached by hand.  It's a simple
+        matter to remove the retaining ring and slide off the gear and spring.
+        The old grease should be removed from these parts with a solvent
+        (lighter fluid works well). A small screwdriver may be needed to scrape
+        the old grease out of some of the harder-to-reach areas. Next, you just
+        need to re-lubricate the mechanism. I used sewing machine oil, which 
+        I'm pretty sure works just as well as typewriter oil.
+      </p>
+      <p>
+        A video demonstrating the dissassembly and reassembly of the shift
+        mechasnism is included below. 
+      </p>
+      <video controls height="" width="">
+        <source src="/vid/selectric/shiftClutch/disassemblyReassembly.mp4" type="video/mp4">
+      </video> 
+      <p>
+        And finally, an example of what a properly working shift clutch looks
+        like.
+      </p>
+      <video controls height="" width="">
+        <source src="/vid/selectric/shiftClutch/working.mp4" type="video/mp4">
+      </video>
+      <hr />
+    </div>
+  </div>
 
   <div class="row">
     <div class="col-12"> 
