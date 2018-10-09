@@ -74,6 +74,10 @@
             <a href="https://github.com/nathalie-tate">GitHub</a>
           </div>
 
+          <div class="col-6 text-right">
+            <a href="https://exercism.io/profiles/nathalie-tate">Exercism</a>
+          </div>
+
           <!-- Columns above this line get right-aligned. Columns below get left-aligned -->
 
           <div class="col-6 text-left">
