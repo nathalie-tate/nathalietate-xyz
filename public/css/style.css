@@ -8,7 +8,7 @@ body
   display: flex;
   flex-flow: column;
   height: 100%;
-  font-family: Inconsolata, monospace;
+  font-family: Inconsolata, Consolas, monospace;
 }
 
 nav
@@ -49,11 +49,19 @@ h1
 
 .content
 {
-  font-size: 18px;
+  /*font-size: 18px;*/
   color: white;
   background: black;
   padding:10px;
-  flex: 1 1 auto;
+  flex: 1 0 auto;
+}
+
+.wrapper
+{
+  color: white;
+  background: black;
+  min-height: 100%;
+  flex: 1 0 auto;
 }
 
 hr
