@@ -5,3 +5,4 @@ projects/herculeze/app
 *.hi
 *.o
 a.out
+public/css/bootstrap.min.css
