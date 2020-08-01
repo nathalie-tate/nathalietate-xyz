@@ -42,7 +42,7 @@ sub getCopy
     "Decay exists as an extant form of life",
     "Beyond the Flesh and the Real",
     "You cannot kill me in a way that matters",
-    'Fix your hearts or die"
+    "Fix your hearts or die"
   );
 
   return $phrases[ rand @phrases ];
